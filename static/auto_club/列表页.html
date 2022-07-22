@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表-车辆列表</title>
+
+    <link href="css/master.css" rel="stylesheet">
+
+    <!-- SWITCHER -->
+    <link rel="stylesheet" id="switcher-css" type="text/css" href="assets/switcher/css/switcher.css" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/color1.css" title="color1" media="all"
+        data-default-color="true" />
+    <link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/color2.css" title="color2" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/color3.css" title="color3" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/color4.css" title="color4" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/color5.css" title="color5" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/color6.css" title="color6" media="all" />
+
+    <!--[if lt IE 9]>
+		<script src="/oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="/oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+</head>
+
+<body class="m-listings" data-scrolling-animations="true">
+    <!-- 加载转圈 -->
+    <div id="page-preloader"><span class="spinner"></span></div>
+
+    <!-- 主题颜色选择 start -->
+    <div class="switcher-wrapper">
+        <div class="demo_changer">
+            <div class="demo-icon customBgColor"><i class="fa fa-cog fa-spin fa-2x"></i></div>
+            <div class="form_holder">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="predefined_styles">
+                            <div class="skin-theme-switcher">
+                                <h4>颜色</h4>
+                                <a href="#" data-switchcolor="color1" class="styleswitch"
+                                    style="background-color:#f76d2b;"> </a>
+                                <a href="#" data-switchcolor="color2" class="styleswitch"
+                                    style="background-color:#de483d;"> </a>
+                                <a href="#" data-switchcolor="color3" class="styleswitch"
+                                    style="background-color:#228dcb;"> </a>
+                                <a href="#" data-switchcolor="color4" class="styleswitch"
+                                    style="background-color:#00bff3;"> </a>
+                                <a href="#" data-switchcolor="color5" class="styleswitch"
+                                    style="background-color:#2dcc70;"> </a>
+                                <a href="#" data-switchcolor="color6" class="styleswitch"
+                                    style="background-color:#6054c2;"> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 主题颜色选择 end -->
+
+    <!-- 头部 start -->
+    <header id="this-is-top" class="b-topBar wow slideInDown" data-wow-delay="0.7s">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-xs-6">
+                    <div class="b-topBar__addr">
+                        <span class="fa fa-map-marker"></span>
+                        buy@gwmc.vip
+                    </div>
+                </div>
+                <div class="col-md-2 col-xs-6">
+                    <div class="b-topBar__tel">
+                        <span class="fa fa-phone"></span>
+                        130-480-806-09
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-6">
+                    <nav class="b-topBar__nav">
+                        <ul>
+                            <li><a href="#">订单</a></li>
+                            <li><a href="#">注册</a></li>
+                            <li><a href="#">登录</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-2 col-xs-6">
+                    <div class="b-topBar__lang">
+                        <div class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle='dropdown'>语言</a>
+                            <a class="m-langLink dropdown-toggle" data-toggle='dropdown' href="#"><span
+                                    class="b-topBar__lang-flag m-en"></span>EN<span class="fa fa-caret-down"></span></a>
+                            <ul class="dropdown-menu h-lang">
+                                <li><a class="m-langLink dropdown-toggle" data-toggle='dropdown' href="#"><span
+                                            class="b-topBar__lang-flag m-en"></span>EN</a></li>
+                                <li><a class="m-langLink dropdown-toggle" data-toggle='dropdown' href="#"><span
+                                            class="b-topBar__lang-flag m-es"></span>ES</a></li>
+                                <li><a class="m-langLink dropdown-toggle" data-toggle='dropdown' href="#"><span
+                                            class="b-topBar__lang-flag m-de"></span>DE</a></li>
+                                <li><a class="m-langLink dropdown-toggle" data-toggle='dropdown' href="#"><span
+                                            class="b-topBar__lang-flag m-fr"></span>FR</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- 头部 end -->
+
+    <!-- 这个没有用的 start -->
+    <section class="b-modal">
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Video</h4>
+                    </div>
+                    <div class="modal-body">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/a_ugz7GoHwY"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 这个没有用的 end -->
+
+    <!-- 菜单 start -->
+    <nav class="b-nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-xs-4">
+                    <div class="b-nav__logo wow slideInLeft" data-wow-delay="0.3s">
+                        <h3><a href="index.html">跟我<span>买车</span></a></h3>
+                        <h2><a href="index.html">买车跟我来 跟我买好车</a></h2>
+                    </div>
+                </div>
+                <div class="col-sm-9 col-xs-8">
+                    <div class="b-nav__list wow slideInRight" data-wow-delay="0.3s">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse navbar-main-slide" id="nav">
+                            <ul class="navbar-nav-menu">
+                                <li><a href="首页.html">首页</a></li>
+                                <li><a href="listings.html">列表</a></li>
+                                <li><a href="compare.html">比较</a></li>
+                                <li><a href="about.html">关于</a></li>
+                                <li><a href="article.html">文章</a></li>
+                                <li><a href="submit1.html">购物车</a></li>
+                                <li><a href="contacts.html">联系</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- 菜单 end -->
+
+    <!-- 标栏图 start -->
+    <section class="b-pageHeader">
+        <div class="container">
+            <h1 class=" wow zoomInLeft" data-wow-delay="0.5s">车辆列表</h1>
+            <div class="b-pageHeader__search wow zoomInRight" data-wow-delay="0.5s">
+                <h3>搜索结果58条</h3>
+            </div>
+        </div>
+    </section>
+    <!-- 标栏图 end -->
+
+    <!-- 导航指示start -->
+    <div class="b-breadCumbs s-shadow">
+        <div class="container wow zoomInUp" data-wow-delay="0.5s">
+            <a href="index.html" class="b-breadCumbs__page">首页</a><span class="fa fa-angle-right"></span><a
+                href="listings.html" class="b-breadCumbs__page m-active">搜索结果</a>
+        </div>
+    </div>
+    <!-- 导航指示end -->
+
+    <!-- 中间不同内容 ============start=================== -->
+
+    <!-- 条件排序栏 start -->
+    <div class="b-infoBar">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-xs-12">
+                    <div class="b-infoBar__compare wow zoomInUp" data-wow-delay="0.5s">
+                        <div class="dropdown">
+                            <a href="#" class="dropdown-toggle b-infoBar__compare-item" data-toggle='dropdown'><span
+                                    class="fa fa-clock-o"></span>历史记录<span class="fa fa-caret-down"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="detail.html">车1</a></li>
+                                <li><a href="detail.html">车2</a></li>
+                                <li><a href="detail.html">车3</a></li>
+                                <li><a href="detail.html">车8</a></li>
+                            </ul>
+                        </div>
+                        <a href="compare.html" class="b-infoBar__compare-item"><span
+                                class="fa fa-compress"></span>比较车辆：2</a>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-xs-12">
+                    <div class="b-infoBar__select">
+                        <form method="post" action="">
+                            <div class="b-infoBar__select-one wow zoomInUp" data-wow-delay="0.5s">
+                                <span class="b-infoBar__select-one-title">展示方式</span>
+                                <a href="listingsTwo.html" class="m-list m-active"><span class="fa fa-list"></span></a>
+                                <a href="listTable.html" class="m-table"><span class="fa fa-table"></span></a>
+                            </div>
+                            <div class="b-infoBar__select-one wow zoomInUp" data-wow-delay="0.5s">
+                                <span class="b-infoBar__select-one-title">每页</span>
+                                <select name="select1" class="m-select">
+                                    <option value="" selected="">10 条</option>
+                                    <option value="" selected="">18 条</option>
+                                </select>
+                                <span class="fa fa-caret-down"></span>
+                            </div>
+                            <div class="b-infoBar__select-one wow zoomInUp" data-wow-delay="0.5s">
+                                <span class="b-infoBar__select-one-title">排序方式</span>
+                                <select name="select2" class="m-select">
+                                    <option value="" selected="">最新推荐</option>
+                                    <option value="" selected="">快过期</option>
+                                </select>
+                                <span class="fa fa-caret-down"></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 条件排序栏 end -->
+
+    <!-- 车辆列表 start -->
+    <section class="b-items s-shadow">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-sm-8 col-xs-12">
+                    <div class="b-items__cars">
+
+                        <div class="b-items__cars-one wow zoomInUp" data-wow-delay="0.5s">
+                            <div class="b-items__cars-one-img">
+                                <img src="media/270x230/dodge.jpg" alt='dodge'>
+                                <a data-toggle="modal" data-target="#myModal" href="#"
+                                    class="b-items__cars-one-img-video"><span class="fa fa-film"></span>视频</a>
+                                <span class="b-items__cars-one-img-type m-premium">最新推荐</span>
+                                <form action="" method="post">
+                                    <input type="checkbox" name="check1" id='check1'>
+                                    <label for="check1" class="b-items__cars-one-img-check"><span
+                                            class="fa fa-check"></span></label>
+                                </form>
+                            </div>
+                            <div class="b-items__cars-one-info">
+                                <header class="b-items__cars-one-info-header s-lineDownLeft">
+                                    <h2>雪佛兰 西尔维拉多 1500</h2>
+                                    <span>￥29,415</span>
+                                </header>
+                                <p>
+                                    在一个非常豪华的皮卡市场上，西尔维拉多坚持了它的基本卡车配方。这个
+                                    转向是准确的，和西尔维拉多处理更像一辆大车而不是一个大的
+                                    货车
+                                </p>
+                                <div class="b-items__cars-one-info-km">
+                                    <span class="fa fa-tachometer"></span> 31,730 KM
+                                </div>
+                                <div class="b-items__cars-one-info-details">
+                                    <div class="b-featured__item-links">
+                                        <a href="#">2017年注册登记</a>
+                                        <a href="#">已使用</a>
+                                        <a href="#">8速自动变速箱</a>
+                                        <a href="#">2.0T汽油</a>
+                                    </div>
+                                    <a href="detail.html" class="btn m-btn">查看详情<span
+                                            class="fa fa-angle-right"></span></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="b-items__cars-one wow zoomInUp" data-wow-delay="0.5s">
+                            <div class="b-items__cars-one-img">
+                                <img src="media/270x230/ferrari.jpg" alt="ferrari">
+                                <a data-toggle="modal" data-target="#myModal" href="#"
+                                    class="b-items__cars-one-img-video"><span class="fa fa-film"></span>VIDEO</a>
+                                <span class="b-items__cars-one-img-type m-leasing">最佳性价比</span>
+                                <form action="" method="post">
+                                    <input type="checkbox" name="check2" id='check2'>
+                                    <label for="check2" class="b-items__cars-one-img-check"><span
+                                            class="fa fa-check"></span></label>
+                                </form>
+                            </div>
+                            <div class="b-items__cars-one-info">
+                                <header class="b-items__cars-one-info-header s-lineDownLeft">
+                                    <h2>2017 法拉利</h2>
+                                    <span>$1,420,112</span>
+                                </header>
+                                <p>
+                                    在跑车的上面，有一些充满异国情调的跑车。而拉法拉利也已经准备好了
+                                    他是所有充满异国情调的跑车之王。它的789马力的V-12得到了161马力的提升
+                                    电动机
+                                </p>
+                                <div class="b-items__cars-one-info-km">
+                                    <span class="fa fa-tachometer"></span> 35,000 KM
+                                </div>
+                                <div class="b-items__cars-one-info-details">
+                                    <div class="b-featured__item-links">
+                                        <a href="#">Registered 2017</a>
+                                        <a href="#">Used</a>
+                                        <a href="#">7-Speed Automatic</a>
+                                        <a href="#">Petrol</a>
+                                    </div>
+                                    <a href="detail.html" class="btn m-btn">查看详情<span class="fa fa-angle-right"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="b-items__cars-one wow zoomInUp" data-wow-delay="0.3s">
+                            <div class="b-items__cars-one-img">
+                                <img src="media/270x230/jaguarList.jpg" alt='jaguar'>
+                                <a data-toggle="modal" data-target="#myModal" href="#"
+                                    class="b-items__cars-one-img-video"><span class="fa fa-film"></span>视频</a>
+                                <span class="b-items__cars-one-img-type m-listing">新推荐</span>
+                                <form action="" method="post">
+                                    <input type="checkbox" name="check3" id='check3'>
+                                    <label for="check3" class="b-items__cars-one-img-check"><span
+                                            class="fa fa-check"></span></label>
+                                </form>
+                            </div>
+                            <div class="b-items__cars-one-info">
+                                <header class="b-items__cars-one-info-header s-lineDownLeft">
+                                    <h2>捷豹 XF 2017</h2>
+                                    <span>$51,170</span>
+                                </header>
+                                <p>
+                                    弯曲的线条，华丽的木材，皮革内饰和性能
+                                    结合了捷豹的爱。240马力，2.0升涡轮增压发动机
+                                </p>
+                                <div class="b-items__cars-one-info-km">
+                                    <span class="fa fa-tachometer"></span> 0,000 KM
+                                </div>
+                                <div class="b-items__cars-one-info-details">
+                                    <div class="b-featured__item-links">
+                                        <a href="#">Registered 2017</a>
+                                        <a href="#">Used</a>
+                                        <a href="#">8-Speed Automatic</a>
+                                        <a href="#">Petrol</a>
+                                    </div>
+                                    <a href="detail.html" class="btn m-btn">了解详情<span
+                                            class="fa fa-angle-right"></span></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="b-items__cars-one wow zoomInUp" data-wow-delay="0.3s">
+                            <div class="b-items__cars-one-img">
+                                <img src="media/270x230/lexus.jpg" alt="lexus" />
+                                <a data-toggle="modal" data-target="#myModal" href="#"
+                                    class="b-items__cars-one-img-video"><span class="fa fa-film"></span>视频</a>
+                                <span class="b-items__cars-one-img-type m-owner">最多关注</span>
+                                <form action="" method="post">
+                                    <input type="checkbox" name="check4" id='check4'>
+                                    <label for="check4" class="b-items__cars-one-img-check"><span
+                                            class="fa fa-check"></span></label>
+                                </form>
+                            </div>
+                            <div class="b-items__cars-one-info">
+                                <header class="b-items__cars-one-info-header s-lineDownLeft">
+                                    <h2>雷克萨斯 LS460 F Sport</h2>
+                                    <span>$73,445</span>
+                                </header>
+                                <p>
+                                    LS是第一款混合了欧洲豪华车和自诩的日本人的日本汽车
+                                    可靠性，并且今天它继续提供这种引人注目的组合
+                                </p>
+                                <div class="b-items__cars-one-info-km">
+                                    <span class="fa fa-tachometer"></span> 35,000 KM
+                                </div>
+                                <div class="b-items__cars-one-info-details">
+                                    <div class="b-featured__item-links">
+                                        <a href="#">Registered 2017</a>
+                                        <a href="#">Used</a>
+                                        <a href="#">8-Speed Automatic</a>
+                                        <a href="#">Petrol</a>
+                                    </div>
+                                    <a href="detail.html" class="btn m-btn">查看详情<span
+                                            class="fa fa-angle-right"></span></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="b-items__cars-one wow zoomInUp" data-wow-delay="0.3s">
+                            <div class="b-items__cars-one-img">
+                                <img src="media/270x230/mersAmg.jpg" alt="amg" />
+                                <a data-toggle="modal" data-target="#myModal" href="#"
+                                    class="b-items__cars-one-img-video"><span class="fa fa-film"></span>视频</a>
+                                <form action="" method="post">
+                                    <input type="checkbox" name="check6" id='check6'>
+                                    <label for="check6" class="b-items__cars-one-img-check"><span
+                                            class="fa fa-check"></span></label>
+                                </form>
+                            </div>
+                            <div class="b-items__cars-one-info">
+                                <header class="b-items__cars-one-info-header s-lineDownLeft">
+                                    <h2>梅赛德斯-奔驰 GL63 AMG</h2>
+                                    <span>$120,375</span>
+                                </header>
+                                <p>
+                                    顶级的GL63AMG是为那些渴望性能，豪华，和
+                                    排外
+                                    -你知道的；生活中最美好的东西。AMG在GL上施展魔法
+                                </p>
+                                <div class="b-items__cars-one-info-km">
+                                    <span class="fa fa-tachometer"></span> 35,000 KM
+                                </div>
+                                <div class="b-items__cars-one-info-details">
+                                    <div class="b-featured__item-links">
+                                        <a href="#">Registered 2017</a>
+                                        <a href="#">Used</a>
+                                        <a href="#">7-Speed Automatic</a>
+                                        <a href="#">Petrol</a>
+                                    </div>
+                                    <a href="detail.html" class="btn m-btn">查看详情<span
+                                            class="fa fa-angle-right"></span></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="b-items__cars-one wow zoomInUp" data-wow-delay="0.5s">
+                            <div class="b-items__cars-one-img">
+                                <img src="media/270x230/nissanList.jpg" alt="nissan" />
+                                <a data-toggle="modal" data-target="#myModal"
+                                    href="http://cloud.video.taobao.com/play/u/3160696789/p/1/e/6/t/1/357395387123.mp4"
+                                    class="b-items__cars-one-img-video"><span class="fa fa-film"></span>视频3</a>
+                                <form action="" method="post">
+                                    <input type="checkbox" name="check5" id='check5'>
+                                    <label for="check5" class="b-items__cars-one-img-check"><span
+                                            class="fa fa-check"></span></label>
+                                </form>
+                            </div>
+                            <div class="b-items__cars-one-info">
+                                <header class="b-items__cars-one-info-header s-lineDownLeft">
+                                    <h2>2017 日产 Maxima</h2>
+                                    <span>$32,115</span>
+                                </header>
+                                <p>
+                                    曾经被称为“四门跑车”的Maxima已经变得越来越大、越来越重
+                                    在过去的几十年里，这削弱了它的吸引力。当前一代
+                                </p>
+                                <div class="b-items__cars-one-info-km">
+                                    <span class="fa fa-tachometer"></span> 35,000 KM
+                                </div>
+                                <div class="b-items__cars-one-info-details">
+                                    <div class="b-featured__item-links">
+                                        <a href="#">Registered 2017</a>
+                                        <a href="#">Used</a>
+                                        <a href="#">7-Speed Automatic</a>
+                                        <a href="#">Petrol</a>
+                                    </div>
+                                    <a href="detail.html" class="btn m-btn">了解详情<span
+                                            class="fa fa-angle-right"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 分页样式 start -->
+                    <div class="b-items__pagination wow zoomInUp" data-wow-delay="0.5s">
+                        <div class="b-items__pagination-main">
+                            <a data-toggle="modal" data-target="#myModal" href="#" class="m-left"><span
+                                    class="fa fa-angle-left"></span></a>
+                            <span class="m-active"><a href="#">1</a></span>
+                            <span><a href="#">2</a></span>
+                            <span class="m-active"><a href="#">3</a></span>
+                            <span><a href="#">4</a></span>
+                            <a href="#" class="m-right"><span class="fa fa-angle-right"></span></a>
+                        </div>
+                    </div>
+                    <!-- 分页样式 end -->
+
+                </div>
+
+                <!-- 右侧start -->
+                <div class="col-lg-3 col-sm-4 col-xs-12">
+                    <aside class="b-items__aside">
+                        <h2 class="s-title wow zoomInUp" data-wow-delay="0.5s">完善搜索</h2>
+                        <div class="b-items__aside-main wow zoomInUp" data-wow-delay="0.5s">
+                            <form>
+                                <div class="b-items__aside-main-body">
+                                    <div class="b-items__aside-main-body-item">
+                                        <label>SELECT A MAKE</label>
+                                        <div>
+                                            <select name="select1" class="m-select">
+                                                <option value="" selected="">Any Make</option>
+                                            </select>
+                                            <span class="fa fa-caret-down"></span>
+                                        </div>
+                                    </div>
+                                    <div class="b-items__aside-main-body-item">
+                                        <label>选择品牌</label>
+                                        <div>
+                                            <select name="select1" class="m-select">
+                                                <option value="" selected="">任何制造商</option>
+                                            </select>
+                                            <span class="fa fa-caret-down"></span>
+                                        </div>
+                                    </div>
+                                    <div class="b-items__aside-main-body-item">
+                                        <label>价格范围</label>
+                                        <div class="slider"></div>
+                                        <input type="hidden" name="min" value="100" class="j-min" />
+                                        <input type="hidden" name="max" value="1000" class="j-max" />
+                                    </div>
+                                    <div class="b-items__aside-main-body-item">
+                                        <label>车辆类型</label>
+                                        <div>
+                                            <select name="select1" class="m-select">
+                                                <option value="" selected="">所有类型</option>
+                                                <option value="" selected="">SUV</option>
+                                                <option value="" selected="">轿车</option>
+                                                <option value="" selected="">皮卡</option>
+                                            </select>
+                                            <span class="fa fa-caret-down"></span>
+                                        </div>
+                                    </div>
+                                    <div class="b-items__aside-main-body-item">
+                                        <label>车辆状态</label>
+                                        <div>
+                                            <select name="select1" class="m-select">
+                                                <option value="" selected="">Any Status</option>
+                                            </select>
+                                            <span class="fa fa-caret-down"></span>
+                                        </div>
+                                    </div>
+                                    <div class="b-items__aside-main-body-item">
+                                        <label>燃料类型</label>
+                                        <div>
+                                            <select name="select1" class="m-select">
+                                                <option value="" selected="">All Fuel Types</option>
+                                            </select>
+                                            <span class="fa fa-caret-down"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <footer class="b-items__aside-main-footer">
+                                    <button type="submit" class="btn m-btn">确定搜索<span
+                                            class="fa fa-angle-right"></span></button><br />
+                                    <a href="">重置所有搜索条件</a>
+                                </footer>
+                            </form>
+                        </div>
+                        <div class="b-items__aside-sell wow zoomInUp" data-wow-delay="0.5s">
+                            <div class="b-items__aside-sell-img">
+                                <h3>卖掉你的车</h3>
+                            </div>
+                            <div class="b-items__aside-sell-info">
+                                <p>
+                                    在此交易你的车辆，最大保监会，哈哈，来人了 .
+                                </p>
+                                <a href="submit1.html" class="btn m-btn">立即注册<span class="fa fa-angle-right"></span></a>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+                <!-- 右侧end -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 车辆列表 end -->
+
+
+    <!-- 中间不同内容 ==========end=================== -->
+
+    <!-- 公共底部 这个带黄色栏 start -->
+    <!-- 底部黄色栏 start -->
+    <div class="b-features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-md-offset-3 col-xs-6 col-xs-offset-6">
+                    <ul class="b-features__items">
+                        <li class="wow zoomInUp" data-wow-delay="0.3s" data-wow-offset="100">低价，质量好
+                        </li>
+                        <li class="wow zoomInUp" data-wow-delay="0.3s" data-wow-offset="100">良心车辆推荐</li>
+                        <li class="wow zoomInUp" data-wow-delay="0.3s" data-wow-offset="100">售后全程服务
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部黄色栏 end -->
+
+    <div class="b-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-xs-6">
+                    <aside class="b-info__aside wow zoomInLeft" data-wow-delay="0.3s">
+                        <article class="b-info__aside-article">
+                            <h3>服务时间</h3>
+                            <div class="b-info__aside-article-item">
+                                <h6>在线客服</h6>
+                                <p>星期一至六：上午8时至下午5时，<br />
+                                    周日关闭</p>
+                            </div>
+                            <div class="b-info__aside-article-item">
+                                <h6>今后</h6>
+                                <p>星期一至星期六：上午8时至下午5时，<br />
+                                    周日关闭</p>
+                            </div>
+                        </article>
+                        <article class="b-info__aside-article">
+                            <h3>关于我们</h3>
+                            <p>跟我买车，团队成立于2022年初春.</p>
+                        </article>
+                        <a href="about.html" class="btn m-btn">了解更多<span class="fa fa-angle-right"></span></a>
+                    </aside>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <div class="b-info__latest">
+                        <h3>最新的推荐</h3>
+                        <div class="b-info__latest-article wow zoomInUp" data-wow-delay="0.3s">
+                            <div class="b-info__latest-article-photo m-audi"></div>
+                            <div class="b-info__latest-article-info">
+                                <h6><a href="detail.html">比亚迪 唐 DM-i</a></h6>
+                                <p><span class="fa fa-tachometer"></span> 35,000 KM</p>
+                            </div>
+                        </div>
+                        <div class="b-info__latest-article wow zoomInUp" data-wow-delay="0.3s">
+                            <div class="b-info__latest-article-photo m-audiSpyder"></div>
+                            <div class="b-info__latest-article-info">
+                                <h6><a href="#">AUDI R8 SPYDER V-8</a></h6>
+                                <p><span class="fa fa-tachometer"></span> 35,000 KM</p>
+                            </div>
+                        </div>
+                        <div class="b-info__latest-article wow zoomInUp" data-wow-delay="0.3s">
+                            <div class="b-info__latest-article-photo m-aston"></div>
+                            <div class="b-info__latest-article-info">
+                                <h6><a href="#">ASTON MARTIN VANTAGE</a></h6>
+                                <p><span class="fa fa-tachometer"></span> 35,000 KM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <div class="b-info__twitter">
+                        <h3>公众号</h3>
+                        <div class="b-info__twitter-article wow zoomInUp" data-wow-delay="0.3s">
+                            <div class="b-info__twitter-article-icon"><span class="fa fa-twitter"></span></div>
+                            <div class="b-info__twitter-article-content">
+                                <p>windown客户端</p>
+                                <span>20 minutes ago</span>
+                            </div>
+                        </div>
+                        <div class="b-info__twitter-article wow zoomInUp" data-wow-delay="0.3s">
+                            <div class="b-info__twitter-article-icon"><span class="fa fa-twitter"></span></div>
+                            <div class="b-info__twitter-article-content">
+                                <p>linux客户端</p>
+                                <span>20 minutes ago</span>
+                            </div>
+                        </div>
+                        <div class="b-info__twitter-article wow zoomInUp" data-wow-delay="0.3s">
+                            <div class="b-info__twitter-article-icon"><span class="fa fa-twitter"></span></div>
+                            <div class="b-info__twitter-article-content">
+                                <p>苹果、案桌</p>
+                                <span>20 minutes ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <address class="b-info__contacts wow zoomInUp" data-wow-delay="0.3s">
+                        <p>联系我们</p>
+                        <div class="b-info__contacts-item">
+                            <span class="fa fa-map-marker"></span>
+                            <em>办公地址：地球村幸运省发财市来发区888号888栋508房</em>
+                        </div>
+                        <div class="b-info__contacts-item">
+                            <span class="fa fa-phone"></span>
+                            <em>电话: 130-480-806-09</em>
+                        </div>
+                        <div class="b-info__contacts-item">
+                            <span class="fa fa-fax"></span>
+                            <em>传真: 1-800- 624-5462</em>
+                        </div>
+                        <div class="b-info__contacts-item">
+                            <span class="fa fa-envelope"></span>
+                            <em>Email: luck@gwmc.vip</em>
+                        </div>
+                    </address>
+                    <address class="b-info__map">
+                        <a href="contacts.html">打开位置地图</a>
+                    </address>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="b-footer">
+        <a id="to-top" href="#this-is-top"><i class="fa fa-chevron-up"></i></a>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="b-footer__company wow fadeInLeft" data-wow-delay="0.3s">
+                        <div class="b-nav__logo">
+                            <h3><a href="index.html">跟我<span>买车</span></a></h3>
+                        </div>
+                        <p>Copyright &copy; 2022.跟我买车（全球）有限公司.<a target="_blank" href="http://www.gust.cn/">握权</a></p>
+                    </div>
+                </div>
+                <div class="col-xs-8">
+                    <div class="b-footer__content wow fadeInRight" data-wow-delay="0.3s">
+                        <!-- 外链 -->
+                        <div class="b-footer__content-social">
+                            <a href="#"><span class="fa fa-facebook-square"></span></a>
+                            <a href="#"><span class="fa fa-twitter-square"></span></a>
+                            <a href="#"><span class="fa fa-google-plus-square"></span></a>
+                            <a href="#"><span class="fa fa-instagram"></span></a>
+                            <a href="#"><span class="fa fa-youtube-square"></span></a>
+                            <a href="#"><span class="fa fa-skype"></span></a>
+                        </div>
+                        <nav class="b-footer__content-nav">
+                            <ul>
+                                <li><a href="index.html">首页</a></li>
+                                <li><a href="404.html">Pages</a></li>
+                                <li><a href="listings.html">Inventory</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="404.html">Services</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="listTable.html">Shop</a></li>
+                                <li><a href="contacts.html">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- 公共底部 end -->
+
+    <!--Main-->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/modernizr.custom.js"></script>
+
+    <script src="assets/rendro-easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.easypiechart.min.js"></script>
+    <script src="js/classie.js"></script>
+
+    <!--Switcher-->
+    <script src="assets/switcher/js/switcher.js"></script>
+    <!--Owl Carousel-->
+    <script src="assets/owl-carousel/owl.carousel.min.js"></script>
+    <!--bxSlider-->
+    <script src="assets/bxslider/jquery.bxslider.js"></script>
+    <!-- jQuery UI Slider -->
+    <script src="assets/slider/jquery.ui-slider.js"></script>
+
+    <!--Theme-->
+    <script src="js/jquery.smooth-scroll.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/jquery.placeholder.min.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+
+</html>
