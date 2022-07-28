@@ -127,7 +127,7 @@ pub fn random_key(len: usize) -> String {
         .collect()
 }
 
-pub fn now_naive_date_time()->chrono::NaiveDateTime{
+pub fn now_naive_date_time() -> chrono::NaiveDateTime {
     // use chrono::prelude::{Local, NaiveDate, NaiveDateTime};
     let fmt = "%Y-%m-%d %H:%M:%S";
     let now = chrono::prelude::Local::now();

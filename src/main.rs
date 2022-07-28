@@ -8,6 +8,11 @@ mod format_logger;
 mod handlers;
 mod routes;
 mod template;
+mod models;
+mod schema;
+
+#[macro_use]
+extern crate diesel;
 
 #[tokio::main]
 async fn main() {
