@@ -176,7 +176,7 @@
         <div class="container">
             <h1 class=" wow zoomInLeft" data-wow-delay="0.5s">车辆推荐列表</h1>
             <div class="b-pageHeader__search wow zoomInRight" data-wow-delay="0.5s">
-                <h3>搜索结果58条</h3>
+                <h3>搜索结果{{list_len}}条 </h3>
             </div>
         </div>
     </section>
@@ -488,15 +488,27 @@
                     </div>
 
                     <!-- 分页样式 start -->
-                    <div class="b-items__pagination wow zoomInUp" data-wow-delay="0.5s">
+                    <!-- <div class="b-items__pagination wow zoomInUp" data-wow-delay="0.5s">
                         <div class="b-items__pagination-main">
-                            <a data-toggle="modal" data-target="#myModal" href="javascript:void(0)" class="m-left"><span
-                                    class="fa fa-angle-left"></span></a>
+
+                            <a data-toggle="modal" data-target="#myModal" href="javascript:void(0)" class="m-left">
+                                <span class="fa fa-angle-left"></span>
+                            </a>
                             <span class="m-active"><a href="javascript:void(0)">1</a></span>
                             <span><a href="javascript:void(0)">2</a></span>
                             <span class="m-active"><a href="javascript:void(0)">3</a></span>
                             <span><a href="javascript:void(0)">4</a></span>
-                            <a href="javascript:void(0)" class="m-right"><span class="fa fa-angle-right"></span></a>
+
+                            <a href="javascript:void(0)" class="m-right">
+                                <span class="fa fa-angle-right"></span>
+                            </a>
+                        </div>
+                    </div> -->
+
+                    <div class="b-items__pagination wow zoomInUp" data-wow-delay="0.5s">
+                        <div class="b-items__pagination-main">
+                            <!-- 三个"{}"不转义html,两个转义 -->
+                            {{{pages}}}
                         </div>
                     </div>
                     <!-- 分页样式 end -->

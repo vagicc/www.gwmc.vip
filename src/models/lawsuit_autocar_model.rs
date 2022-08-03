@@ -136,7 +136,7 @@ impl Serialize for LawsuitAutocar {
 /// 取得列表数据
 /// page: Option<u32>  第几页
 /// per: Option<u32>   每页多少条数据,默认为50
-pub fn get_list(page: Option<u32>, per: Option<u32>) -> Vec<LawsuitAutocar> {
+pub fn get_list(page: Option<u32>, per: Option<u32>) -> (i64, Vec<LawsuitAutocar>) {
     let mut limit: i64 = 50; //每页取几条数据
     let mut offset: i64 = 0; //从第0条开始
 
@@ -156,26 +156,54 @@ pub fn get_list(page: Option<u32>, per: Option<u32>) -> Vec<LawsuitAutocar> {
         // }
     }
 
+    let query = lawsuit_autocar.filter(show.eq(true));
+
+    let query_count = query.count();
+    log::debug!(
+        "数量查询SQL：{:#?}",
+        diesel::debug_query::<diesel::pg::Pg, _>(&query_count).to_string()
+    );
+
+    let conn = get_connection();
+    let count: i64 = query_count.get_result(&conn).unwrap(); //查询总条数
+    let data_null: Vec<LawsuitAutocar> = Vec::new();
+
+    if count <= 0 {
+        return (count, data_null);
+    }
+
     //分页
-    let query = lawsuit_autocar
-        .filter(show.eq(true))
+    let query = query
         .order_by(id.desc())
         .limit(limit) //取10条数据
         .offset(offset); //从第0条开始
-    let sql = diesel::debug_query::<diesel::pg::Pg, _>(&query).to_string();
-    log::debug!("get_list分页查询SQL：{:?}", sql);
 
-    let conn = get_connection();
-    query.load::<LawsuitAutocar>(&conn).unwrap_or_else(|op| {
-        let temp: Vec<LawsuitAutocar> = Vec::new();
-        return temp;
-    })
+    //分页,旧的
+    // let query = lawsuit_autocar
+    //     .filter(show.eq(true))
+    //     .order_by(id.desc())
+    //     .limit(limit) //取10条数据
+    //     .offset(offset); //从第0条开始
+
+    log::debug!(
+        "get_list分页查询SQL：{:#?}",
+        diesel::debug_query::<diesel::pg::Pg, _>(&query).to_string()
+    );
+
+    (
+        count,
+        query.load::<LawsuitAutocar>(&conn).unwrap_or_else(|_op| {
+            return data_null;
+        }),
+    )
 }
 
 pub fn get_id(primary_key: i32) -> Option<LawsuitAutocar> {
     let query = lawsuit_autocar.find(primary_key);
-    let sql = diesel::debug_query::<diesel::pg::Pg, _>(&query).to_string();
-    log::debug!("get_id查询SQL：{:?}", sql);
+    log::debug!(
+        "get_id查询SQL：{:?}",
+        diesel::debug_query::<diesel::pg::Pg, _>(&query).to_string()
+    );
 
     let conn = get_connection();
     let result = query.first::<LawsuitAutocar>(&conn);

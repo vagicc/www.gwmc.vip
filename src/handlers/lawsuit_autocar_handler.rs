@@ -13,11 +13,14 @@ type ResultWarp<T> = std::result::Result<T, Rejection>;
 
 // 分页显示
 pub async fn list(page: u32) -> ResultWarp<impl Reply> {
-    let per: u32 = 8;
-    let list = lawsuit_autocar_model::get_list(Some(page), Some(per));
+    let per: u32 = 3; //每页总数
+    let (count, list) = lawsuit_autocar_model::get_list(Some(page), Some(per));
+    let pages = crate::common::page("lawsuit/autocar", count, page, per);
+    
     let mut data = Map::new();
     data.insert("list_len".to_string(), to_json(list.len()));
     data.insert("list".to_string(), to_json(list));
+    data.insert("pages".to_string(), to_json(pages));
 
     let html = to_html_single("lawsuit_autocar_list.html", data);
     Ok(warp::reply::html(html))
@@ -27,6 +30,7 @@ pub async fn detail(id: i32) -> ResultWarp<impl Reply> {
     let detail = lawsuit_autocar_model::get_id(id);
 
     if detail.is_none() {
+        log::warn!("查无此数据:lawsuit_autocar表无ID:{}", id);
         return Err(warp::reject::not_found()); //错误的返回
     }
 
