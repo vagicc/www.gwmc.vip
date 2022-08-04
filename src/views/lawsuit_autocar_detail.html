@@ -276,7 +276,8 @@
                                             </ul>
 
                                             <p>
-                                                {{article.article_content}}
+                                                <!-- 三个"{}"不转义html,两个转义 -->
+                                                {{{article.article_content}}}
                                             </p>
                                             
                                             <p>

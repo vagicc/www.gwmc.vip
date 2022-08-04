@@ -279,10 +279,4 @@ pub fn page(path: &str, count: i64, page: u32, per: u32) -> String {
     page_html
 }
 
-/*
-<div class="b-items__pagination-main">
 
-
-    &lt;span class="m-active"&gt;&lt;a href="javascript:void(0)"&gt;1&lt;/a&gt;&lt;/span&gt;
-                        </div>
-                         */
