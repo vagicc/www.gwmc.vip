@@ -183,8 +183,8 @@ pub fn page(path: &str, count: i64, page: u32, per: u32) -> String {
 
         // 左边的页数数字,如左边少页数,则在右边补
         if page - show_left <= 0 {
-            show_right+=show_left; 
-            show_left = page - 1;  
+            show_right += show_left;
+            show_left = page - 1;
             show_right -= show_left;
         }
         while show_left > 0 {
@@ -273,10 +273,9 @@ pub fn page(path: &str, count: i64, page: u32, per: u32) -> String {
         );
     }
 
+    println!("page:{},count_page:{}", page, count_page);
     //末页
-    if page < count_page - 1 {}
+    if page + 1 < count_page {}
 
     page_html
 }
-
-
