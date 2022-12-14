@@ -11,7 +11,7 @@ pub fn all_routes() -> impl warp::Filter<Extract = impl warp::Reply, Error = war
         .and(warp::fs::file("./static/favicon.ico"));
 
     //.well-known
-    let well = warp::path(".well-known").and(warp::fs::dir("./static"));
+    let well = warp::path(".well-known").and(warp::fs::dir("./static/.well-known"));
     let dir = warp::path("static").and(warp::fs::dir("./static"));
     let home = home_route::index();
     let lawsuit_autocar = lawsuit_autocar_route::list();
