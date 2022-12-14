@@ -27,23 +27,23 @@ async fn main() {
         .target(env_logger::Target::Stdout)  //添加这行可以重定向日志
         .init();
 
-    log::info!("such information");
-    log::warn!("o_O");
-    log::error!("much error");
-    log::debug!("高度");
+    // log::info!("such information");
+    // log::warn!("o_O");
+    // log::error!("much error");
+    // log::debug!("高度");
 
     let routes = filters::all_routes();
 
     //取得https证书等
-    let cert_path = get_env("cert_path");
-    let key_path = get_env("key_path");
+    // let cert_path = get_env("cert_path");
+    // let key_path = get_env("key_path");
     let ip_addr = get_env("ip_address");
     let socket_addr: SocketAddr = ip_addr.as_str().parse().unwrap();
 
     warp::serve(routes)
-        .tls()
-        .cert_path(cert_path)
-        .key_path(key_path)
+        // .tls()
+        // .cert_path(cert_path)
+        // .key_path(key_path)
         .run(socket_addr)
         .await;
 }
