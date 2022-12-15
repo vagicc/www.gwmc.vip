@@ -10,6 +10,7 @@ mod routes;
 mod template;
 mod models;
 mod schema;
+mod pager;
 
 #[macro_use]
 extern crate diesel;
