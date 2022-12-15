@@ -273,6 +273,7 @@ pub fn page(path: &str, count: i64, page: u32, per: u32) -> String {
         );
     }
 
+    println!("page:{},count_page:{}", page, count_page);
     //末页
     if page + 1 < count_page {}
 
