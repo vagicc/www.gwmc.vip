@@ -1439,20 +1439,20 @@ checksum = "cda74da7e1a664f795bb1f8a87ec406fb89a02522cf6e50620d016add6dbbf5c"
 
 [[package]]
 name = "tokio"
-version = "1.19.2"
+version = "1.23.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c51a52ed6686dd62c320f9b89299e9dfb46f730c7a48e635c19f21d116cb1439"
+checksum = "eab6d665857cc6ca78d6e80303a02cea7a7851e85dfbd77cbdc09bd129f1ef46"
 dependencies = [
+ "autocfg",
  "bytes",
  "libc",
  "memchr",
  "mio",
  "num_cpus",
- "once_cell",
  "pin-project-lite",
  "socket2",
  "tokio-macros",
- "winapi",
+ "windows-sys 0.42.0",
 ]
 
 [[package]]
