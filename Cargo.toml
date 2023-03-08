@@ -2,7 +2,9 @@
 name = "www-gwmc-vip"
 version = "0.1.3"
 edition = "2021"
-authors = ["临来笑笑生 <luck@elapse.date>"]
+readme = "README.md"
+authors = ["跟我买车技术支持：临来笑笑生 <luck@elapse.date>"]
+
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -22,8 +24,8 @@ bigdecimal = "0.3.0"
 
 # 模板-隔离RUST和HTML
 # 基本用法: https://handlebarsjs.com/zh/guide/expressions.html#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95
-# handlebars = "4.2.2"
-handlebars = "4.3.5"
+# 文档：https://docs.rs/handlebars/4.3.6/handlebars/
+handlebars = "4.3.6"
 
 # 加载环境配置文件.env
 dotenv = "0.15.0"
