@@ -1,0 +1,537 @@
+{{#*inline "child"}}
+
+<!-- 标栏图 start -->
+<section class="b-pageHeader">
+    <div class="container">
+        <h1 class=" wow zoomInLeft" data-wow-delay="0.5s">{{detail.title}}</h1>
+        <div class="b-pageHeader__search wow zoomInRight" data-wow-delay="0.5s">
+            <h3>阅读最新的汽车新闻和评论</h3>
+        </div>
+    </div>
+</section>
+<!-- 标栏图 end -->
+
+<!-- 导航指示start -->
+<div class="b-breadCumbs s-shadow">
+    <div class="container wow zoomInUp" data-wow-delay="0.7s">
+        <a href="{{base_url}}" class="b-breadCumbs__page">首页</a><span class="fa fa-angle-right"></span><a
+            href="{{base_url}}lawsuit/autocar" class="b-breadCumbs__page">法拍车推荐</a><span
+            class="fa fa-angle-right"></span><a href="javascript:void(0)" class="b-breadCumbs__page m-active">车辆详情</a>
+    </div>
+</div>
+<!-- 导航指示end -->
+
+<section class="b-article">
+    <div class="container">
+        <div class="row">
+            <!-- 文章-左侧 start -->
+            <div class="col-md-9 col-xs-12">
+                <div class="b-article__main">
+                    <div class="b-blog__posts-one">
+                        <div class="row m-noBlockPadding">
+                            <!-- <div class="col-sm-1 col-xs-2">
+                                    <div class="b-blog__posts-one-author wow zoomInUp" data-wow-delay="0.5s">
+                                        <div class="b-blog__posts-one-author-img">
+
+                                        </div>
+                                        <div class="b-blog__posts-one-share s-lineDownCenter">分享</div>
+                                        <div class="b-blog__posts-one-social">
+                                            <div>
+                                                <a href="javascript:void(0)"><span class="fa fa-google-plus-square "></span></a>
+                                                <a href="javascript:void(0)"><span class="fa  fa-facebook-square"></span></a>
+                                            </div>
+                                            <div>
+                                                <a href="javascript:void(0)"><span class="fa fa-twitter-square "></span></a>
+                                                <a href="javascript:void(0)"><span class="fa fa-pinterest-square"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            <div class="col-sm-11 col-xs-10">
+                                <div class="b-blog__posts-one-body">
+                                    <header class="b-blog__posts-one-body-head wow zoomInUp" data-wow-delay="0.5s">
+                                        <h2 class="s-titleDet">{{detail.title}}</h2>
+                                        <div class="b-blog__posts-one-body-head-notes">
+                                            <span class="b-blog__posts-one-body-head-notes-note"><span
+                                                    class="fa fa-jpy"></span>{{detail.price_base}}</span>
+                                            <span class="b-blog__posts-one-body-head-notes-note">
+                                                <span class="fa fa-angle-left"></span>
+                                                {{detail.start_time}} 至 {{detail.end_time}}
+                                                <span class="fa fa-angle-right"></span>
+                                            </span>
+
+
+                                            <span class="b-blog__posts-one-body-head-notes-note"><span
+                                                    class="fa fa-calendar-o"></span>{{article.create_time}}</span>
+                                            <span class="b-blog__posts-one-body-head-notes-note"><span
+                                                    class="fa fa-comment"></span>5条评论</span>
+                                            <!-- <span class="b-blog__posts-one-body-head-notes-note"><span
+                                                        class="fa fa-pencil"></span>汽车市场，提示 &amp; 建议</span> -->
+                                        </div>
+                                    </header>
+
+                                    <div class="b-blog__posts-one-body-main wow zoomInUp" data-wow-delay="0.5s">
+                                        <!-- 图片 -->
+                                        <div class="b-blog__posts-one-body-main-img">
+                                            <ul class="bxslider enable-bx-slider" data-pager-custom="#bx-pager"
+                                                data-mode="fade" data-pager-slide="false" data-mode-pager="horizontal"
+                                                data-pager-qty="0">
+                                                <!-- 大图:750x300 -->
+                                                {{#each photo}}
+                                                <li>
+                                                    <img class="img-responsive" src="{{external_original}}"
+                                                        alt="jaguar" />
+                                                </li>
+                                                {{/each}}
+                                            </ul>
+                                            <div class="b-blog__posts-one-body-main-img-small" id="bx-pager">
+                                                <!-- 小图:90x65 -->
+                                                {{#each photo}}
+                                                <a href="javascript:void(0)" data-slide-index="{{@index}}">
+                                                    <img src="{{external_small}}" alt="car" />
+                                                </a>
+                                                {{/each}}
+                                            </div>
+                                        </div>
+                                        <!-- 开始正式的内容 -->
+
+                                        <blockquote>
+                                            {{detail.summary}}
+                                        </blockquote>
+
+                                        <ul class="s-list">
+                                            <!-- 通用车型号 -->
+                                            {{#if detail.universal_model}}
+                                            <li>
+                                                <span class="fa fa-check"></span>
+                                                {{detail.universal_model}}
+                                            </li>
+                                            {{/if}}
+                                            <!--  变速箱(手动6档,自动档)-->
+                                            {{#if detail.gearbox}}
+                                            <li>
+                                                <span class="fa fa-check"></span>
+                                                {{detail.gearbox}}
+                                            </li>
+                                            {{/if}}
+                                            <!-- <li>
+                                                    <span class="fa fa-check"></span>
+                                                    避开从车商处购买二手车 = 避开二手车的坑
+                                                </li>
+                                                <li>
+                                                    <span class="fa fa-check"></span>
+                                                    从众多法拍车当中只推荐值得购买的性价比最佳的好车
+                                                </li> -->
+
+                                        </ul>
+
+                                        <p>
+                                            <!-- 三个"{}"不转义html,两个转义 -->
+                                            {{{article.article_content}}}
+                                        </p>
+
+                                        <p>
+                                            拍卖平台:
+                                            {{#if (eq detail.belong 2)}}
+                                            <a href="{{detail.external_url}}" target="_blank">京东</a>
+                                            {{else}}
+                                            <a href="{{detail.external_url}}" target="_blank">淘宝</a>
+                                            {{/if}}
+                                        </p>
+                                    </div>
+
+                                    <div class="b-blog__posts-one-body-why wow zoomInUp" data-wow-delay="0.5s">
+                                        <div class="s-lineDownLeft  s-titleLeft">
+                                            <div>
+                                                <h2 class="s-titleDet">为什么选择跟我买车</h2>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <p>
+                                            新车练手太贵,二手车坑太多,跟我买车(专注于推荐性价比高的法拍车).跟差我购买便宜的无坑好车
+                                        </p>
+                                        <ul class="s-list">
+                                            <li>
+                                                <span class="fa fa-check"></span>
+                                                避开从车商处购买二手车 = 避开二手车的坑
+                                            </li>
+                                            <li>
+                                                <span class="fa fa-check"></span>
+                                                从众多法拍车当中只推荐值得购买的性价比最佳的好车
+                                            </li>
+                                            <li>
+                                                <span class="fa fa-check"></span>
+                                                解决法拍车过户流程问题
+                                            </li>
+                                            <li><span class="fa fa-check"></span>
+                                                可提供代拍及代过户法拍车服务
+                                            </li>
+                                            <li><span class="fa fa-check"></span>
+                                                可提供法拍车看样服务
+                                            </li>
+                                        </ul>
+
+
+                                    </div>
+                                    <div class="b-blog__posts-one-body-tags wow zoomInUp" data-wow-delay="0.5s">
+                                        <span class="fa fa-tags"></span>
+                                        标签:
+                                        <a href="javascript:void(0)">宝马</a>
+                                        <a href="javascript:void(0)">众泰</a>
+                                        <a href="javascript:void(0)">比亚迪</a>
+                                        <a href="javascript:void(0)">长安</a>
+                                        <a href="javascript:void(0)">跟我买车</a>
+                                        <a href="javascript:void(0)">法拍车</a>
+                                        <a href="javascript:void(0)">二手车</a>
+                                        <a href="javascript:void(0)">新车</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="b-article__main-related s-shadow">
+                        <div class="s-lineDownLeft  s-titleLeft">
+                            <div>
+                                <h2 class="s-titleDet wow zoomInUp" data-wow-delay="0.5s">更多好车推荐</h2>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="row">
+                            <div class="col-sm-6 col-xs-12">
+                                <div class="b-article__main-related-item wow zoomInUp" data-wow-delay="0.5s">
+                                    <div class="row m-smallPadding">
+                                        <div class="col-xs-4">
+                                            <img class="center-block img-responsive" src="media/100x80/related1.jpg"
+                                                alt="related" />
+                                        </div>
+                                        <div class="col-xs-8">
+                                            <h5>
+                                                <a href="javascript:void(0)">2017年西班牙版捷豹f型双门跑车
+                                                    比利牛斯山脉</a>
+                                            </h5>
+                                            <div class="b-blog__posts-one-body-head-notes">
+                                                <span class="b-blog__posts-one-body-head-notes-note"><span
+                                                        class="fa fa-user"></span>临来笑笑生</span>
+                                                <span class="b-blog__posts-one-body-head-notes-note"><span
+                                                        class="fa fa-calendar-o"></span>20th May 2017</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-xs-12">
+                                <div class="b-article__main-related-item wow zoomInUp" data-wow-delay="0.5s">
+                                    <div class="row m-smallPadding">
+                                        <div class="col-xs-4">
+                                            <img class="center-block img-responsive" src="media/100x80/related2.jpg"
+                                                alt="related" />
+                                        </div>
+                                        <div class="col-xs-8">
+                                            <h5>
+                                                <a href="javascript:void(0)">使用2008年至2014年梅赛德斯-奔驰c级
+                                                    评审</a>
+                                            </h5>
+                                            <div class="b-blog__posts-one-body-head-notes">
+                                                <span class="b-blog__posts-one-body-head-notes-note"><span
+                                                        class="fa fa-user"></span>雪飘如</span>
+                                                <span class="b-blog__posts-one-body-head-notes-note"><span
+                                                        class="fa fa-calendar-o"></span>20th May 2017</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="b-article__main-author wow zoomInUp" data-wow-delay="0.5s">
+                        <div class="row">
+                            <div class="col-xs-2 pull-right">
+                                <div class="b-blog__posts-one-author-img pull-right"></div>
+                            </div>
+                            <div class="col-xs-10 pull-right">
+                                <h3><span>作者: </span> 临来笑笑生</h3>
+                                <div class="b-article__main-author-social">
+                                    <a href="javascript:void(0)" class=""><span class="fa fa-facebook"></span></a>
+                                    <a href="javascript:void(0)" class=""><span class="fa fa-twitter"></span></a>
+                                    <a href='#' class=""><span class="fa fa-google-plus"></span></a>
+                                </div>
+                                <div class="clearfix"></div>
+                                <p>
+                                    Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                                    architecto beatae vitae dicta sunt explicabo.
+                                    Neen ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                                    consequuntu mag dolores eo quv
+                                    ol up tatem sequi nesciunt. Neque porro quisquam est qui dolorem ipsum quia
+                                    dolor.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="b-article__main-comments">
+                        <div class="s-lineDownLeft  s-titleLeft">
+                            <div class=" wow zoomInUp" data-wow-delay="0.5s">
+                                <h2 class="s-titleDet">评论</h2>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <!-- 评论列表 start -->
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="b-article__main-comments-one wow zoomInUp" data-wow-delay="0.5s">
+                                    <div class="b-article__main-comments-one-person">
+                                        <div class="b-blog__posts-one-author-img"></div>
+                                    </div>
+                                    <div class="b-article__main-comments-one-text">
+                                        <header class="b-article__main-comments-one-text-head">
+                                            <h6>威廉沙恩</h6>
+                                            <div class="b-article__main-comments-one-text-head-date">
+                                                <span>2017年5月30日</span>
+                                                <span>发布于上午12：25</span>
+                                            </div>
+                                            <a class="b-article__main-comments-one-text-head-answer  pull-right"
+                                                href="javascript:void(0)"><span
+                                                    class="fa fa-long-arrow-left"></span></a>
+                                        </header>
+                                        <p>
+                                            在eget多洛。我坐在神圣的脂肪里。
+                                            这是我的朋友。这是我的朋友。
+                                            我是在之前的了。在我的家乡。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="b-article__main-comments-one m-second wow zoomInUp" data-wow-delay="0.5s">
+                                    <div class="b-article__main-comments-one-person">
+                                        <div class="b-blog__posts-one-author-img m-woomen"></div>
+                                    </div>
+                                    <div class="b-article__main-comments-one-text">
+                                        <header class="b-article__main-comments-one-text-head">
+                                            <h6>Martina Kathrine</h6>
+                                            <div class="b-article__main-comments-one-text-head-date">
+                                                <span>30 MAY 2017</span>
+                                                <span>Posted at 12:25 AM</span>
+                                            </div>
+                                            <a class="b-article__main-comments-one-text-head-answer  pull-right"
+                                                href="javascript:void(0)"><span
+                                                    class="fa fa-long-arrow-left"></span></a>
+                                        </header>
+                                        <p>
+                                            In eget dolor. Lorem ipsum dolor sit amet consectetuer adipiscing elit.
+                                            Ut ornare cursus nibh. Sed lorem volutpat purus scel erisque dapibus.
+                                            Etiam adipiscing ante nec nibh. In in felis in metus mollis blandit.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 评论列表 end -->
+                    </div>
+
+                    <div class="b-article__main-add wow zoomInUp" data-wow-delay="0.5s">
+                        <div class="s-lineDownLeft  s-titleLeft">
+                            <div>
+                                <h2 class="s-titleDet">我要回复</h2>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <form action="" method="POST">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <input placeholder="你的名字" type="text" name="name" />
+                                </div>
+                                <div class="col-xs-4">
+                                    <input placeholder="EMAIL ADDRESS" type="text" name="email" />
+                                </div>
+                                <div class="col-xs-4">
+                                    <input placeholder="网站" type="text" name="website" />
+                                </div>
+                            </div>
+                            <textarea name="text" placeholder="回复内容"></textarea>
+                            <!-- <button type="submit" class="btn m-btn">发送评论<span
+                                        class="fa fa-angle-right"></span></button> -->
+                            <button type="button" class="btn m-btn">发送评论<span class="fa fa-angle-right"></span></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- 文章-左侧 end -->
+
+            <!-- 右侧 start -->
+            <div class="col-md-3 col-xs-12">
+                <aside class="b-blog__aside">
+                    <!-- 搜索表单 start -->
+                    <form class="b-blog__aside-search wow zoomInUp" data-wow-delay="0.5s" action="" method="post">
+                        <div>
+                            <input type="text" name="search" value="" placeholder="要搜索内容" />
+                            <!-- <button type="submit"><span class="fa fa-search"></span></button> -->
+                            <button type="button"><span class="fa fa-search"></span></button>
+                        </div>
+                    </form>
+                    <!-- 搜索表单 start -->
+
+                    <div class="b-blog__aside-categories wow zoomInUp" data-wow-delay="0.5s">
+                        <header class="s-lineDownLeft">
+                            <h2 class="s-titleDet">类别</h2>
+                        </header>
+                        <nav>
+                            <ul class="b-blog__aside-categories-list">
+                                <li><a href="javascript:void(0)">Auto Buying Tips &amp; Advice</a></li>
+                                <li><a href="javascript:void(0)">汽车新闻</a></li>
+                                <li class="m-active"><a href="javascript:void(0)">本期车辆推送</a></li>
+                                <li><a href="javascript:void(0)">在线看车</a></li>
+                                <li><a href="javascript:void(0)">Analysis &amp; Features</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="b-blog__aside-popular wow zoomInUp" data-wow-delay="0.5s">
+                        <header class="s-lineDownLeft">
+                            <h2 class="s-titleDet">热门车辆推送</h2>
+                        </header>
+                        <div class="b-blog__aside-popular-posts">
+                            <div class="b-blog__aside-popular-posts-one">
+                                <img class="img-responsive" src="media/270x150/mercBlog.png" alt="merc" />
+                                <h4><a href="javascript:void(0)">2017年梅赛德斯-奔驰通用汽车级首次亮相</a></h4>
+                                <div class="b-blog__aside-popular-posts-one-date"><span
+                                        class="fa fa-calendar-o"></span>20th May 2017</div>
+                            </div>
+                            <div class="b-blog__aside-popular-posts-one">
+                                <img class="img-responsive" src="media/270x150/outlander.png" alt="outlander" />
+                                <h4><a href="javascript:void(0)">2017年三菱欧兰德</a></h4>
+                                <div class="b-blog__aside-popular-posts-one-date"><span
+                                        class="fa fa-calendar-o"></span>20th May 2017</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="b-blog__aside-text wow zoomInUp" data-wow-delay="0.5s">
+                        <header class="s-lineDownLeft">
+                            <h2 class="s-titleDet">为什么选择我们？</h2>
+                        </header>
+                        <p>Curabitur libero. Donec facilisis velit edu est
+                            Phasellus conside quat. Aenean vitae quam.
+                            Vivamus etdu nunc. Nunc conseq sem velde
+                            metus imperdiet lacinia. Cras ornare pretum
+                            tortor. Donec sed augue sed nunc rutru me
+                            egestas. Bulum ante ipsum primisn faucibus
+                            orci luctus et ultrices posuere.</p>
+                    </div>
+                    <div class="b-blog__aside-reviews wow zoomInUp" data-wow-delay="0.5s">
+                        <header class="s-lineDownLeft">
+                            <h2 class="s-titleDet">最新评论</h2>
+                        </header>
+                        <div class="b-blog__aside-reviews-posts">
+                            <div class="b-blog__aside-reviews-posts-one">
+                                <div class="row m-smallPadding">
+                                    <div class="col-xs-5">
+                                        <img src="media/100x80/audiRev.jpg" alt="audi"
+                                            class="img-responsive pull-right" />
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="b-blog__aside-reviews-posts-one-info">
+                                            <p>First Drive:<br />2017 Audi Q3</p>
+                                            <div class="b-world__item-val">
+                                                <div class="b-world__item-val-circles">
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span class="m-empty"></span>
+                                                </div>
+                                                <span class="b-world__item-num">4.1</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="b-blog__aside-reviews-posts-one">
+                                <div class="row m-smallPadding">
+                                    <div class="col-xs-5">
+                                        <img src="media/100x80/mercRev.jpg" alt="merc"
+                                            class="img-responsive  pull-right" />
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="b-blog__aside-reviews-posts-one-info">
+                                            <p>Mercedes-Benz GLA Class 2017 Hottest Hatch</p>
+                                            <div class="b-world__item-val">
+                                                <div class="b-world__item-val-circles">
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span class="m-empty"></span>
+                                                </div>
+                                                <span class="b-world__item-num">4.1</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="b-blog__aside-reviews-posts-one">
+                                <div class="row m-smallPadding">
+                                    <div class="col-xs-5">
+                                        <img src="media/100x80/mazdaRev.jpg" alt=""
+                                            class="img-responsive  pull-right" />
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="b-blog__aside-reviews-posts-one-info">
+                                            <p>First Look: <br />2017 Mazda CX-3</p>
+                                            <div class="b-world__item-val">
+                                                <div class="b-world__item-val-circles">
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span class="m-empty"></span>
+                                                </div>
+                                                <span class="b-world__item-num">4.1</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="b-blog__aside-archives wow zoomInUp" data-wow-delay="0.5s">
+                        <header class="s-lineDownLeft">
+                            <h2 class="s-titleDet">档案</h2>
+                        </header>
+                        <nav>
+                            <ul class="b-blog__aside-categories-list">
+                                <li><a href="javascript:void(0)">April 2017</a></li>
+                                <li><a href="javascript:void(0)">March 2017</a></li>
+                                <li class="m-active"><a href="javascript:void(0)">February 2017</a></li>
+                                <li><a href="javascript:void(0)">January 2105</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="b-items__aside-sell wow zoomInUp" data-wow-delay="0.5s">
+                        <div class="b-items__aside-sell-img">
+                            <h3>SELL YOUR CAR</h3>
+                        </div>
+                        <div class="b-items__aside-sell-info">
+                            <p>
+                                Nam tellus enimds eleifend dignis lsim
+                                biben edum tristique sed metus fusce
+                                Maecenas lobortis.
+                            </p>
+                            <a href="javascript:void(0)" class="btn m-btn">REGISTER NOW<span
+                                    class="fa fa-angle-right"></span></a>
+                        </div>
+                    </div>
+
+                    <!-- 大标电话 -->
+                    <div class="b-detail__main-aside-about-call wow zoomInUp" data-wow-delay="0.5s">
+                        <span class="fa fa-phone"></span>
+                        <div>1-888-378-4027</div>
+                        <p>QUESTIONS? CALL US 24/7</p>
+                    </div>
+                </aside>
+            </div>
+            <!-- 右侧 end -->
+        </div>
+    </div>
+</section>
+
+
+{{/inline}}
+{{> (lookup this "parent")}}
