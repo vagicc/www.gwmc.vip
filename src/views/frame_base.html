@@ -150,12 +150,10 @@
                         <div class="collapse navbar-collapse navbar-main-slide" id="nav">
                             <ul class="navbar-nav-menu">
                                 <li><a href="javascript:void(0)">首页</a></li>
-                                <li><a href="javascript:void(0)">列表</a></li>
-                                <li><a href="javascript:void(0)">比较</a></li>
-                                <li><a href="javascript:void(0)">关于</a></li>
-                                <li><a href="javascript:void(0)">文章</a></li>
+                                {{#each navbar}}
+                                <li><a href="{{../base_url}}{{link}}">{{menu}}</a></li>
+                                {{/each}}
                                 <!-- <li><a href="javascript:void(0)">购物车</a></li> -->
-                                <li><a href="javascript:void(0)">联系</a></li>
                             </ul>
                         </div>
                     </div>
