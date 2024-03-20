@@ -13,5 +13,5 @@ pub fn index() -> impl Filter<Extract = impl warp::Reply, Error = warp::Rejectio
     use crate::handlers::lawsuit_autocar_handler;
     warp::get()
         .and(warp::path::end())
-        .and_then(home_handler::index)
+        .and_then(|| async { lawsuit_autocar_handler::list(1).await })
 }
