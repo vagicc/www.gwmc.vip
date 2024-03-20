@@ -14,8 +14,9 @@
 <!-- 导航指示start -->
 <div class="b-breadCumbs s-shadow">
     <div class="container wow zoomInUp" data-wow-delay="0.5s">
-        <a href="javascript:void(0)" class="b-breadCumbs__page">首页</a><span class="fa fa-angle-right"></span><a
-            href="javascript:void(0)" class="b-breadCumbs__page m-active">搜索结果</a>
+        <a href="javascript:void(0)" class="b-breadCumbs__page">首页</a>
+        <span class="fa fa-angle-right"></span>
+        <a href="javascript:void(0)" class="b-breadCumbs__page m-active">列表</a>
     </div>
 </div>
 <!-- 导航指示end -->
@@ -24,47 +25,25 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-xs-12">
-                <div class="b-infoBar__compare wow zoomInUp" data-wow-delay="0.5s">
-                    <div class="dropdown">
-                        <a href="javascript:void(0)" class="dropdown-toggle b-infoBar__compare-item"
-                            data-toggle='dropdown'><span class="fa fa-clock-o"></span>历史记录<span
-                                class="fa fa-caret-down"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="javascript:void(0)">车1</a></li>
-                            <li><a href="javascript:void(0)">车2</a></li>
-                            <li><a href="javascript:void(0)">车3</a></li>
-                            <li><a href="javascript:void(0)">车8</a></li>
-                        </ul>
-                    </div>
-                    <a href="javascript:void(0)" class="b-infoBar__compare-item"><span
-                            class="fa fa-compress"></span>比较车辆：2</a>
+                <div class="b-infoBar__compare wow zoomInUp" data-wow-delay="0.1s">
+                    
+                    <a href="javascript:void(0)" class="b-infoBar__compare-item">
+                        <span class="fa fa-compress"></span>搜索结果：{{list_len}}</a>
                 </div>
             </div>
             <div class="col-lg-8 col-xs-12">
-                <div class="b-infoBar__select">
-                    <form method="post" action="">
-                        <div class="b-infoBar__select-one wow zoomInUp" data-wow-delay="0.5s">
-                            <span class="b-infoBar__select-one-title">展示方式</span>
-                            <a href="javascript:void(0)" class="m-list m-active"><span class="fa fa-list"></span></a>
-                            <a href="javascript:void(0)" class="m-table"><span class="fa fa-table"></span></a>
-                        </div>
-                        <div class="b-infoBar__select-one wow zoomInUp" data-wow-delay="0.5s">
-                            <span class="b-infoBar__select-one-title">每页</span>
-                            <select name="select1" class="m-select">
-                                <option value="" selected="">10 条</option>
-                                <option value="" selected="">18 条</option>
-                            </select>
-                            <span class="fa fa-caret-down"></span>
-                        </div>
-                        <div class="b-infoBar__select-one wow zoomInUp" data-wow-delay="0.5s">
-                            <span class="b-infoBar__select-one-title">排序方式</span>
-                            <select name="select2" class="m-select">
-                                <option value="" selected="">最新推荐</option>
-                                <option value="" selected="">快过期</option>
-                            </select>
-                            <span class="fa fa-caret-down"></span>
-                        </div>
-                    </form>
+                <div class="b-infoBar__compare wow zoomInUp pull-right" data-wow-delay="0.1s">
+                    <div class="dropdown ">
+                        <a href="javascript:void(0)" class="dropdown-toggle b-infoBar__compare-item"
+                            data-toggle='dropdown'><span class="fa fa-clock-o"></span>推荐记录<span
+                                class="fa fa-caret-down"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript:void(0)">最新推荐</a></li>
+                            <li><a href="javascript:void(0)">昨日推荐</a></li>
+                            <li><a href="javascript:void(0)">前日推荐</a></li>
+                            <li><a href="javascript:void(0)">过拍结束</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -126,192 +105,6 @@
                     </div>
                     {{/each}}
 
-                    <div class="b-items__cars-one wow zoomInUp" data-wow-delay="0.5s">
-                        <div class="b-items__cars-one-img">
-                            <img src="media/270x230/ferrari.jpg" alt="ferrari">
-                            <a data-toggle="modal" data-target="#myModal" href="javascript:void(0)"
-                                class="b-items__cars-one-img-video"><span class="fa fa-film"></span>VIDEO</a>
-                            <span class="b-items__cars-one-img-type m-leasing">最佳性价比</span>
-                            <form action="" method="post">
-                                <input type="checkbox" name="check2" id='check2'>
-                                <label for="check2" class="b-items__cars-one-img-check"><span
-                                        class="fa fa-check"></span></label>
-                            </form>
-                        </div>
-                        <div class="b-items__cars-one-info">
-                            <header class="b-items__cars-one-info-header s-lineDownLeft">
-                                <h2>2017 法拉利</h2>
-                                <span>$1,420,112</span>
-                            </header>
-                            <p>
-                                在跑车的上面，有一些充满异国情调的跑车。而拉法拉利也已经准备好了
-                                他是所有充满异国情调的跑车之王。它的789马力的V-12得到了161马力的提升
-                                电动机
-                            </p>
-                            <div class="b-items__cars-one-info-km">
-                                <span class="fa fa-tachometer"></span> 35,000 KM
-                            </div>
-                            <div class="b-items__cars-one-info-details">
-                                <div class="b-featured__item-links">
-                                    <a href="javascript:void(0)">Registered 2017</a>
-                                    <a href="javascript:void(0)">Used</a>
-                                    <a href="javascript:void(0)">7-Speed Automatic</a>
-                                    <a href="javascript:void(0)">Petrol</a>
-                                </div>
-                                <a href="javascript:void(0)" class="btn m-btn">查看详情<span
-                                        class="fa fa-angle-right"></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="b-items__cars-one wow zoomInUp" data-wow-delay="0.3s">
-                        <div class="b-items__cars-one-img">
-                            <img src="media/270x230/jaguarList.jpg" alt='jaguar'>
-                            <a data-toggle="modal" data-target="#myModal" href="javascript:void(0)"
-                                class="b-items__cars-one-img-video"><span class="fa fa-film"></span>视频</a>
-                            <span class="b-items__cars-one-img-type m-listing">新推荐</span>
-                            <form action="" method="post">
-                                <input type="checkbox" name="check3" id='check3'>
-                                <label for="check3" class="b-items__cars-one-img-check"><span
-                                        class="fa fa-check"></span></label>
-                            </form>
-                        </div>
-                        <div class="b-items__cars-one-info">
-                            <header class="b-items__cars-one-info-header s-lineDownLeft">
-                                <h2>捷豹 XF 2017</h2>
-                                <span>$51,170</span>
-                            </header>
-                            <p>
-                                弯曲的线条，华丽的木材，皮革内饰和性能
-                                结合了捷豹的爱。240马力，2.0升涡轮增压发动机
-                            </p>
-                            <div class="b-items__cars-one-info-km">
-                                <span class="fa fa-tachometer"></span> 0,000 KM
-                            </div>
-                            <div class="b-items__cars-one-info-details">
-                                <div class="b-featured__item-links">
-                                    <a href="javascript:void(0)">Registered 2017</a>
-                                    <a href="javascript:void(0)">Used</a>
-                                    <a href="javascript:void(0)">8-Speed Automatic</a>
-                                    <a href="javascript:void(0)">Petrol</a>
-                                </div>
-                                <a href="javascript:void(0)" class="btn m-btn">了解详情<span
-                                        class="fa fa-angle-right"></span></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="b-items__cars-one wow zoomInUp" data-wow-delay="0.3s">
-                        <div class="b-items__cars-one-img">
-                            <img src="media/270x230/lexus.jpg" alt="lexus" />
-                            <a data-toggle="modal" data-target="#myModal" href="javascript:void(0)"
-                                class="b-items__cars-one-img-video"><span class="fa fa-film"></span>视频</a>
-                            <span class="b-items__cars-one-img-type m-owner">最多关注</span>
-                            <form action="" method="post">
-                                <input type="checkbox" name="check4" id='check4'>
-                                <label for="check4" class="b-items__cars-one-img-check"><span
-                                        class="fa fa-check"></span></label>
-                            </form>
-                        </div>
-                        <div class="b-items__cars-one-info">
-                            <header class="b-items__cars-one-info-header s-lineDownLeft">
-                                <h2>雷克萨斯 LS460 F Sport</h2>
-                                <span>$73,445</span>
-                            </header>
-                            <p>
-                                LS是第一款混合了欧洲豪华车和自诩的日本人的日本汽车
-                                可靠性，并且今天它继续提供这种引人注目的组合
-                            </p>
-                            <div class="b-items__cars-one-info-km">
-                                <span class="fa fa-tachometer"></span> 35,000 KM
-                            </div>
-                            <div class="b-items__cars-one-info-details">
-                                <div class="b-featured__item-links">
-                                    <a href="javascript:void(0)">Registered 2017</a>
-                                    <a href="javascript:void(0)">Used</a>
-                                    <a href="javascript:void(0)">8-Speed Automatic</a>
-                                    <a href="javascript:void(0)">Petrol</a>
-                                </div>
-                                <a href="javascript:void(0)" class="btn m-btn">查看详情<span
-                                        class="fa fa-angle-right"></span></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="b-items__cars-one wow zoomInUp" data-wow-delay="0.3s">
-                        <div class="b-items__cars-one-img">
-                            <img src="media/270x230/mersAmg.jpg" alt="amg" />
-                            <a data-toggle="modal" data-target="#myModal" href="javascript:void(0)"
-                                class="b-items__cars-one-img-video"><span class="fa fa-film"></span>视频</a>
-                            <form action="" method="post">
-                                <input type="checkbox" name="check6" id='check6'>
-                                <label for="check6" class="b-items__cars-one-img-check"><span
-                                        class="fa fa-check"></span></label>
-                            </form>
-                        </div>
-                        <div class="b-items__cars-one-info">
-                            <header class="b-items__cars-one-info-header s-lineDownLeft">
-                                <h2>梅赛德斯-奔驰 GL63 AMG</h2>
-                                <span>$120,375</span>
-                            </header>
-                            <p>
-                                顶级的GL63AMG是为那些渴望性能，豪华，和
-                                排外
-                                -你知道的；生活中最美好的东西。AMG在GL上施展魔法
-                            </p>
-                            <div class="b-items__cars-one-info-km">
-                                <span class="fa fa-tachometer"></span> 35,000 KM
-                            </div>
-                            <div class="b-items__cars-one-info-details">
-                                <div class="b-featured__item-links">
-                                    <a href="javascript:void(0)">Registered 2017</a>
-                                    <a href="javascript:void(0)">Used</a>
-                                    <a href="javascript:void(0)">7-Speed Automatic</a>
-                                    <a href="javascript:void(0)">Petrol</a>
-                                </div>
-                                <a href="javascript:void(0)" class="btn m-btn">查看详情<span
-                                        class="fa fa-angle-right"></span></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="b-items__cars-one wow zoomInUp" data-wow-delay="0.5s">
-                        <div class="b-items__cars-one-img">
-                            <img src="media/270x230/nissanList.jpg" alt="nissan" />
-                            <a data-toggle="modal" data-target="#myModal"
-                                href="http://cloud.video.taobao.com/play/u/3160696789/p/1/e/6/t/1/357395387123.mp4"
-                                class="b-items__cars-one-img-video"><span class="fa fa-film"></span>视频3</a>
-                            <form action="" method="post">
-                                <input type="checkbox" name="check5" id='check5'>
-                                <label for="check5" class="b-items__cars-one-img-check"><span
-                                        class="fa fa-check"></span></label>
-                            </form>
-                        </div>
-                        <div class="b-items__cars-one-info">
-                            <header class="b-items__cars-one-info-header s-lineDownLeft">
-                                <h2>2017 日产 Maxima</h2>
-                                <span>$32,115</span>
-                            </header>
-                            <p>
-                                曾经被称为“四门跑车”的Maxima已经变得越来越大、越来越重
-                                在过去的几十年里，这削弱了它的吸引力。当前一代
-                            </p>
-                            <div class="b-items__cars-one-info-km">
-                                <span class="fa fa-tachometer"></span> 35,000 KM
-                            </div>
-                            <div class="b-items__cars-one-info-details">
-                                <div class="b-featured__item-links">
-                                    <a href="javascript:void(0)">Registered 2017</a>
-                                    <a href="javascript:void(0)">Used</a>
-                                    <a href="javascript:void(0)">7-Speed Automatic</a>
-                                    <a href="javascript:void(0)">Petrol</a>
-                                </div>
-                                <a href="javascript:void(0)" class="btn m-btn">了解详情<span
-                                        class="fa fa-angle-right"></span></a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- 分页样式 start -->
