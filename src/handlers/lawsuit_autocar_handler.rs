@@ -22,7 +22,7 @@ pub async fn list(page: u32) -> ResultWarp<impl Reply> {
     data.insert("list".to_string(), to_json(list));
     data.insert("pages".to_string(), to_json(pages));
 
-    data.insert("seo_title".to_string(), to_json("最新法拍车推荐"));
+    data.insert("seo_title".to_string(), to_json("跟我买车-官网"));
     data.insert(
         "seo_keyword".to_string(),
         to_json("司法拍卖车;跟我买车;二手车;法拍车推荐;法拍车详细过户流程;最新法拍车"),
